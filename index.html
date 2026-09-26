@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Malzama.Krd | مەلزەمە کورد - سەکۆی سەرەکی کتێب و مەلزەمە</title>
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- Header Section -->
+    <header class="site-header">
+      <div class="header-top">
+        <!-- Logo -->
+        <a class="brand-logo" onclick="location.reload()">
+          <div class="logo-icon">
+            <i class="fa-solid fa-book-open-reader"></i>
+          </div>
+          <div class="brand-text">
+            <span class="dark">Malzama</span><span class="krd">.Krd</span>
+          </div>
+        </a>
+
+        <!-- Top Right Icons -->
+        <div class="header-actions">
+          <button class="icon-btn" id="headerNotifBtn" title="ئاگادارییەکان">
+            <i class="fa-regular fa-bell"></i>
+            <span class="dot-badge"></span>
+          </button>
+          
+          <button class="icon-btn" id="headerCartBtn" title="سەبەتەی کڕین">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge" id="cartBadge">2</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Input Bar -->
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="گەڕان بە دوای کتێب، بابەت یاخود پۆل ...">
+        <button class="search-clear" id="searchClear"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </header>
+
+    <!-- MAIN VIEW (Sereki) -->
+    <main class="page-view active" id="view-sereki">
+      
+      <!-- Top Blue Hero Banner -->
+      <section class="hero-banner">
+        <img src="assets/images/hero_books_banner_1790446951490.png" alt="Stacked Kurdish Books" class="banner-left-img">
+        
+        <div class="banner-content">
+          <h1 class="banner-title">کتێبەکانی کوردی<br><span style="font-size:0.9em; font-weight:600;">بۆ هەموو پۆلەکان</span></h1>
+          <div class="banner-pill">زمان، ڕێزمان، وەرزشی، کەلتور</div>
+        </div>
+
+        <div class="banner-right-text">
+          Study<br>Learn<br>Grow
+        </div>
+      </section>
+
+      <!-- Grade Filter Tabs -->
+      <section class="filters-section">
+        <div class="grade-tabs">
+          <button class="grade-tab active" data-grade="9">پۆلی 9</button>
+          <button class="grade-tab" data-grade="10">پۆلی 10</button>
+          <button class="grade-tab" data-grade="11">پۆلی 11</button>
+          <button class="grade-tab" data-grade="12">پۆلی 12</button>
+        </div>
+
+        <!-- Secondary Subject Tabs -->
+        <div class="sub-tabs">
+          <button class="sub-tab active" data-sub="all">هەمووی</button>
+          <button class="sub-tab" data-sub="grammar">ڕێزمان</button>
+          <button class="sub-tab" data-sub="literature">زمان و ئەدەب</button>
+        </div>
+      </section>
+
+      <!-- Section Title Header & Sorting -->
+      <section class="section-header">
+        <h2 class="section-title" id="sectionTitle">کتێبەکانی پۆلی 9 - کوردی</h2>
+        <button class="sort-btn">
+          <i class="fa-solid fa-arrow-down-short-wide"></i>
+          <span>بەتازەکان</span>
+        </button>
+      </section>
+
+      <!-- Books 3-Column Responsive Grid -->
+      <section class="books-container">
+        <div class="books-grid" id="booksGrid">
+          <!-- Dynamic Books Content Injected Here by app.js -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 2nd HAND MARKETPLACE VIEW (Dasti 2) -->
+    <section class="page-view" id="view-dasti2">
+      <div class="page-title-bar">
+        <h2>بازاڕی کتێبی دەستی دوو</h2>
+      </div>
+      <div id="usedBooksContent">
+        <!-- Injected dynamically -->
+      </div>
+    </section>
+
+    <!-- CART VIEW (Kart) -->
+    <section class="page-view" id="view-kart">
+      <div class="page-title-bar">
+        <h2>سەبەتەی کڕین</h2>
+      </div>
+      <div id="cartContent">
+        <!-- Injected dynamically -->
+      </div>
+    </section>
+
+    <!-- ORDERS VIEW (Dawakarikan) -->
+    <section class="page-view" id="view-orders">
+      <div class="page-title-bar">
+        <h2>داواکاریەکانم</h2>
+      </div>
+      <div id="ordersContent">
+        <!-- Injected dynamically -->
+      </div>
+    </section>
+
+    <!-- PROFILE VIEW (Man) -->
+    <section class="page-view" id="view-profile">
+      <div class="page-title-bar">
+        <h2>ئەکاوبتی من</h2>
+      </div>
+      <div id="profileContent">
+        <!-- Injected dynamically -->
+      </div>
+    </section>
+
+    <!-- Bottom Navigation Bar (5 Main Tabs) -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-view="sereki">
+        <i class="fa-solid fa-house"></i>
+        <span>سەرەکی</span>
+      </button>
+      
+      <button class="nav-item" data-view="dasti2">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>دەستی 2</span>
+      </button>
+      
+      <button class="nav-item" data-view="kart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="nav-badge" id="cartNavBadge">2</span>
+        <span>كارت</span>
+      </button>
+      
+      <button class="nav-item" data-view="orders">
+        <i class="fa-regular fa-file-lines"></i>
+        <span>داواکاریەکان</span>
+      </button>
+      
+      <button class="nav-item" data-view="profile">
+        <i class="fa-regular fa-user"></i>
+        <span>من</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- Global Modal Overlay -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card" id="modalBody">
+      <!-- Modal Content Injected Here -->
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Application Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>
